@@ -12,7 +12,7 @@ public class Question {
     }
 
     //Get Questions
-    public String getQuestionText() {
+    public String getQuestion() {
         return question;
     }
 

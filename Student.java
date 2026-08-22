@@ -25,7 +25,6 @@ public class Student extends User {
         return semester;
     }
     
-
     public void setStudentId(String studentId) {
         this.studentId = studentId;
     }
@@ -44,7 +43,7 @@ public class Student extends User {
         System.out.println("Department: " + department);
         System.out.println("Semester: " + semester);
     }
-
+    
     public void registerForQuiz() {
         System.out.println("Student registered for quiz.");
     }

@@ -16,7 +16,7 @@ public class Admin extends User {
     }
 
     public void addQuestion() {
-        System.out.println("Admin added a question.");
+        System.out.println("Admin added questions.");
     }
     public void updateQuestion() {
         System.out.println("Admin updated a question.");

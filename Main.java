@@ -16,8 +16,7 @@ public class Main {
         admin.addQuestion();
         admin.viewQuestions();
 
-
-        // Student Information 
+        // Student's Information 
 
         System.out.print("Enter Student Username: ");
         String studentUsername = input.nextLine();
@@ -47,7 +46,6 @@ public class Main {
         student.login();
         student.viewProfile();
         student.registerForQuiz();
-
 
         // Questions
 
@@ -84,17 +82,14 @@ public class Main {
 
         Quiz quiz = new Quiz(questions);
 
-        // START QUIZ
-
+        // Start Quiz
 
         student.startQuiz();
         quiz.loadQuestions();
 
-
-        // Student Answers
+        // Student's Answers
 
         int[] answers = new int[quiz.getQuestionCount()];
-
 
         for (int i = 0; i < quiz.getQuestionCount(); i++) {
             System.out.print("Enter your answer for Question " + (i + 1) + " (1-4): ");
@@ -109,13 +104,12 @@ public class Main {
 
         // Display Result
 
-
         System.out.println("Student: " + student.getUsername());
         System.out.println("Score: " + score+ "/" + quiz.getQuestionCount());
 
-        // SUBMIT AND LOGOUT
+        // Submit and Logout
         student.submitAnswers();
         student.logout();
-        input.close();
+        
     }
 }
