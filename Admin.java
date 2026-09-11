@@ -18,13 +18,16 @@ public class Admin extends User {
     public void addQuestion() {
         System.out.println("Admin added questions.");
     }
+
     public void updateQuestion() {
-        System.out.println("Admin updated a question.");
+        System.out.println("Admin updated questions.");
     }
+
     public void viewQuestions() {
         System.out.println("Admin viewed questions.");
     }
+
     public void deleteQuestion() {
-        System.out.println("Admin deleted a question.");
+        System.out.println("Admin deleted questions.");
     }
 }

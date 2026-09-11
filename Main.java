@@ -84,32 +84,45 @@ public class Main {
 
         // Start Quiz
 
-        student.startQuiz();
+        quiz.startQuiz();
         quiz.loadQuestions();
 
         // Student's Answers
 
         int[] answers = new int[quiz.getQuestionCount()];
 
-        for (int i = 0; i < quiz.getQuestionCount(); i++) {
-            System.out.print("Enter your answer for Question " + (i + 1) + " (1-4): ");
+        for(int i=0; i < quiz.getQuestionCount(); i++) {
 
-            answers[i] = input.nextInt();
+            while(true){
+
+                try{
+                    System.out.print("Enter your answer for Question " + (i + 1) + " (1-4): ");
+
+                    answers[i] = input.nextInt();
+
+                    if (answers[i] < 1 || answers[i] > 4) {
+                        throw new InvalidOptionException(
+                            "Invalid option! Please enter 1 to 4.");
+                    }
+
+                    break;
+
+                } catch (InvalidOptionException e) {
+                    System.out.println(e.getMessage());
+                }
+            }
         }
 
         // Calculate Score
-
         int score = quiz.calculateScore(answers);
 
-
         // Display Result
+        System.out.println("\nStudent: " + student.getUsername());
+        quiz.displayResult(score);
 
-        System.out.println("Student: " + student.getUsername());
-        System.out.println("Score: " + score+ "/" + quiz.getQuestionCount());
-
-        // Submit and Logout
+        // Submit
         student.submitAnswers();
+
         student.logout();
-        
     }
 }

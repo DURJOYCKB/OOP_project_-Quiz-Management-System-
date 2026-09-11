@@ -23,7 +23,7 @@ public abstract class User {
     }
 
     public void login() {
-        System.out.println(username + " logged in.");
+        System.out.println(username + " logged in.\n");
     }
     public void logout() {
         System.out.println(username + " logged out.");
