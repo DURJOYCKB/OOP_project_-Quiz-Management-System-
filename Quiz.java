@@ -11,7 +11,7 @@ public class Quiz implements QuizOperation{
         questionsList[index] = question;
     }
 
-    //Start quiz
+    //Start quiz (Applying Polymorphism)
     @Override
     public void startQuiz(){
         System.out.println("Quiz Started. ");
@@ -33,7 +33,7 @@ public class Quiz implements QuizOperation{
         }
     }
 
-    // Calculate score
+    // Calculate score (Applying Polymorphism)
     @Override 
     public int calculateScore(int[] answers){
         int score = 0;
@@ -46,6 +46,7 @@ public class Quiz implements QuizOperation{
         return score;
     }
 
+    //Display results (Applying Polymorphism)
     @Override
     public void displayResult(int score) {
 

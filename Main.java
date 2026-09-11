@@ -93,6 +93,9 @@ public class Main {
 
         for(int i=0; i < quiz.getQuestionCount(); i++) {
 
+            /* Custom exception is used here to handle 
+            invalid answer options entered by the student. */
+
             while(true){
 
                 try{
