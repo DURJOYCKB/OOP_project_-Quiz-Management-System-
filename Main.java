@@ -107,7 +107,6 @@ public class Main {
                         throw new InvalidOptionException(
                             "Invalid option! Please enter 1 to 4.");
                     }
-
                     break;
 
                 } catch (InvalidOptionException e) {

@@ -1,4 +1,4 @@
-public class RegisteredStudent extends Student {
+public class RegisteredStudent extends Student implements QuizOperation {
 
     private boolean registrationStatus;
     private int quizAttemptCount;
@@ -31,12 +31,20 @@ public class RegisteredStudent extends Student {
         this.quizAttemptCount = quizAttemptCount;
     }
 
+    @Override
     public void startQuiz() {
-        System.out.println("Quiz started.");
+        System.out.println("Student started the quiz.");
     }
 
-    public void viewQuiz() {
-        System.out.println("Quiz viewed.");
+    @Override
+    public int calculateScore(int[] answers) {
+        System.out.println("Student submitted answers.");
+        return 0;
+    }
+
+    @Override
+    public void displayResult(int score) {
+        System.out.println("Student result: " + score);
     }
 
     public void submitAnswers() {
