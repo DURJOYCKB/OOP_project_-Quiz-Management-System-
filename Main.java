@@ -84,7 +84,7 @@ public class Main {
 
         // Start Quiz
 
-        quiz.startQuiz();
+        student.startQuiz();
         quiz.loadQuestions();
 
         // Student's Answers
@@ -121,6 +121,8 @@ public class Main {
         // Display Result
         System.out.println("\nStudent: " + student.getUsername());
         quiz.displayResult(score);
+
+        System.out.println("Quiz Attempts: " + student.getQuizAttemptCount());
 
         // Submit
         student.submitAnswers();

@@ -31,23 +31,34 @@ public class RegisteredStudent extends Student implements QuizOperation {
         this.quizAttemptCount = quizAttemptCount;
     }
 
+    // Interface method
     @Override
     public void startQuiz() {
-        System.out.println("Student started the quiz.");
+
+        quizAttemptCount++;
+
+        System.out.println("Quiz started.");
+        System.out.println("Quiz Attempt: " + quizAttemptCount);
     }
 
+    // Interface method
     @Override
     public int calculateScore(int[] answers) {
-        System.out.println("Student submitted answers.");
+
+        System.out.println("Answers received from student.");
+
         return 0;
     }
 
+    // Interface method
     @Override
     public void displayResult(int score) {
-        System.out.println("Student result: " + score);
+
+        System.out.println("Student Result: " + score);
     }
 
     public void submitAnswers() {
+
         System.out.println("Answers submitted.");
     }
 }
