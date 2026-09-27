@@ -1,55 +1,45 @@
-public class Quiz implements QuizOperation {
+import java.util.ArrayList;
+import java.util.HashMap;
 
-    private Question[] questionsList;
+/**
+ * Manages question collection and score map persistence.
+ */
+public class Quiz {
+    private ArrayList<Question> questions;
+    private HashMap<String, Integer> scoreMap;
 
-    public Quiz(Question[] questions) {
-        questionsList = questions;
+    public Quiz(ArrayList<Question> questions) {
+        this.questions = questions;
+        this.scoreMap = new HashMap<>();
     }
 
-    public void addQuestion(Question question, int index) {
-        questionsList[index] = question;
+    public ArrayList<Question> getQuestions() {
+        return questions;
     }
 
-    @Override
-    public void startQuiz() {
-        System.out.println("Quiz Started.");
+    public void addQuestion(Question q) {
+        this.questions.add(q);
     }
 
-    public void loadQuestions() {
-        for (int i = 0; i < questionsList.length; i++) {
-
-            System.out.println("\nQuestion " + (i + 1));
-            System.out.println(questionsList[i].getQuestion());
-
-            String[] options = questionsList[i].getOptions();
-
-            for (int j = 0; j < options.length; j++) {
-                System.out.println((j + 1) + ". " + options[j]);
-            }
-        }
+    public HashMap<String, Integer> getScoreMap() {
+        return scoreMap;
     }
 
-    @Override
     public int calculateScore(int[] answers) {
-
         int score = 0;
-
-        for (int i = 0; i < questionsList.length; i++) {
-
-            if (questionsList[i].checkAnswer(answers[i])) {
+        for (int i = 0; i < questions.size(); i++) {
+            if (questions.get(i).checkAnswer(answers[i])) {
                 score++;
             }
         }
-
         return score;
     }
 
-    @Override
-    public void displayResult(int score) {
-        System.out.println("Score: " + score + "/" + questionsList.length);
+    public void recordScore(String username, int score) {
+        scoreMap.put(username, score);
     }
 
     public int getQuestionCount() {
-        return questionsList.length;
+        return questions.size();
     }
 }

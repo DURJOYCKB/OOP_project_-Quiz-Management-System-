@@ -1,5 +1,4 @@
 public class Admin extends User {
-
     private String adminId;
 
     public Admin(String username, String password, String adminId) {
@@ -16,11 +15,11 @@ public class Admin extends User {
     }
 
     public void addQuestion() {
-        System.out.println("Admin added questions.");
+        System.out.println("Admin added a question.");
     }
 
     public void updateQuestion() {
-        System.out.println("Admin updated questions.");
+        System.out.println("Admin updated a question.");
     }
 
     public void viewQuestions() {
@@ -28,6 +27,6 @@ public class Admin extends User {
     }
 
     public void deleteQuestion() {
-        System.out.println("Admin deleted questions.");
+        System.out.println("Admin deleted a question.");
     }
 }

@@ -1,5 +1,4 @@
 public abstract class User {
-
     private String username;
     private String password;
 
@@ -11,6 +10,7 @@ public abstract class User {
     public String getUsername() {
         return username;
     }
+
     public String getPassword() {
         return password;
     }
@@ -18,14 +18,20 @@ public abstract class User {
     public void setUsername(String username) {
         this.username = username;
     }
+
     public void setPassword(String password) {
         this.password = password;
     }
 
     public void login() {
-        System.out.println(username + " logged in.\n");
+        System.out.println(username + " logged in.");
     }
+
     public void logout() {
         System.out.println(username + " logged out.");
+    }
+
+    public void displayInfo() {
+        System.out.println("Username: " + username);
     }
 }

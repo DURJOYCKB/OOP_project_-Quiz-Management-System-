@@ -1,3 +1,6 @@
+/**
+ * Registered student implementing QuizOperation interface contracts.
+ */
 public class RegisteredStudent extends Student implements QuizOperation {
 
     private boolean registrationStatus;
@@ -10,7 +13,6 @@ public class RegisteredStudent extends Student implements QuizOperation {
                              int quizAttemptCount) {
 
         super(username, password, studentId, department, semester);
-
         this.registrationStatus = registrationStatus;
         this.quizAttemptCount = quizAttemptCount;
     }
@@ -31,34 +33,28 @@ public class RegisteredStudent extends Student implements QuizOperation {
         this.quizAttemptCount = quizAttemptCount;
     }
 
-    // Interface method
+    // Interface Methods
     @Override
     public void startQuiz() {
-
         quizAttemptCount++;
-
         System.out.println("Quiz started.");
         System.out.println("Quiz Attempt: " + quizAttemptCount);
     }
 
-    // Interface method
     @Override
     public int calculateScore(int[] answers) {
-
         System.out.println("Answers received from student.");
-
         return 0;
     }
 
-    // Interface method
+   // Interface method
     @Override
     public void displayResult(int score) {
-
-        System.out.println("Student Result: " + score);
+        System.out.println("Student Name: " + getUsername());
+        System.out.println("Quiz Result: " + score);
     }
 
     public void submitAnswers() {
-
         System.out.println("Answers submitted.");
     }
 }
