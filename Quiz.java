@@ -4,7 +4,7 @@ import java.util.HashMap;
 /**
  * Manages question collection and score map persistence.
  */
-public class Quiz {
+public class Quiz implements QuizOperation{
     private ArrayList<Question> questions;
     private HashMap<String, Integer> scoreMap;
 
@@ -25,14 +25,27 @@ public class Quiz {
         return scoreMap;
     }
 
+    @Override
+    public void startQuiz() {
+        System.out.println("Quiz started.");
+    }
+
+    @Override
     public int calculateScore(int[] answers) {
         int score = 0;
+
         for (int i = 0; i < questions.size(); i++) {
             if (questions.get(i).checkAnswer(answers[i])) {
                 score++;
             }
         }
+
         return score;
+    }
+
+    @Override
+    public void displayResult(int score) {
+        System.out.println("Quiz Result: " + score);
     }
 
     public void recordScore(String username, int score) {
