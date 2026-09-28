@@ -5,9 +5,9 @@ import javax.swing.SwingUtilities;
 public class Main {
     public static void main(String[] args) {
        
-        RegisteredStudent s1 = new RegisteredStudent("Sukanna", "1234", "S001", "CSE", "1st", true, 0);
-        RegisteredStudent s2 = new RegisteredStudent("Rohit", "5678", "S002", "CSE", "1st", true, 0);
-        RegisteredStudent s3 = new RegisteredStudent("Mitu", "5671", "S003", "CSE", "1st", false, 0);
+        RegisteredStudent s1 = new RegisteredStudent("Sukanna", "1234", "S001", "CSE", "3rd", true, 0);
+        RegisteredStudent s2 = new RegisteredStudent("Rohit", "5678", "S002", "CSE", "3rd", true, 0);
+        RegisteredStudent s3 = new RegisteredStudent("Mitu", "5671", "S003", "CSE", "3rd", false, 0);
 
         ArrayList<RegisteredStudent> studentList = new ArrayList<>();
         studentList.add(s1);
